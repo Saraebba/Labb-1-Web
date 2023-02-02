@@ -1,0 +1,68 @@
+// const getjson = new Request("/products.json");
+
+import productjson from '/products.json' assert {type:'json'}
+
+const products = [];
+const pList = document.querySelector("#p-list");
+
+class Product{
+    constructor(serialnumber, bouqet, info, price, bouqetimg){
+        this.serialnumber = serialnumber;
+        this.bouqet = bouqet;
+        this.info = info;
+        this.price = price;
+        this.bouqetimg = bouqetimg;
+    }
+}
+
+for(const product of productjson){
+
+    products.push(new Product(product.serialnumber, product.bouqet, product.info, product.price, product.bouqetimg))
+}
+
+
+function listProducts(){
+
+    for (const product of products) {
+
+    const div = document.createElement("div");
+    const card = document.createElement("div");
+    const cardbody = document.createElement("div");
+    const img = document.createElement("img");
+    const productname = document.createElement("h3");
+    const info = document.createElement("p");
+    const price = document.createElement("h5");
+    const addtocart  = document.createElement("button");
+
+    //styla 
+    div.classList.add("col-md-4", "col-lg-3", "col-12");
+    card.classList.add("card", "mb-3");
+    cardbody.classList.add("card-body");
+
+    //lägg till innehåll
+    img.src = `${product.bouqetimg}`;
+    productname.innerText = `${product.bouqet}`;
+    info.innerText = `${product.info}`;
+    price.innerText = `${product.price} $`;
+    addtocart.innerText ="Add to cart";
+
+
+    //lägg till 
+    cardbody.append(img, productname, info, price, addtocart);
+    card.append(cardbody);
+    div.append(card);
+    pList.append(div);
+    }
+}
+
+listProducts();
+// fetch(getjson)
+// .then ((response) => response.json())
+// .then((data) => {
+//     console.log(data)
+//     for (let i = 0; i < data.length; i++) {
+    
+//       products.push(new Product(data.serialnumber, data.bouqet, data.info, data.price, data.bouqetimg));
+//     }
+//     listProducts();
+// })
