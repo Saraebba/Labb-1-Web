@@ -1,9 +1,9 @@
-// const getjson = new Request("/products.json");
-
-import productjson from '/products.json' assert {type:'json'}
+import productjson from '/products.json' assert {type:'json'};
 
 const products = [];
-const pList = document.querySelector("#p-list");
+const productlist = document.querySelector("#productlist");
+
+export const shoppingcart = [];
 
 class Product{
     constructor(serialnumber, bouqet, info, price, bouqetimg){
@@ -20,8 +20,10 @@ for(const product of productjson){
     products.push(new Product(product.serialnumber, product.bouqet, product.info, product.price, product.bouqetimg))
 }
 
+listProducts();
 
 function listProducts(){
+
 
     for (const product of products) {
 
@@ -38,6 +40,11 @@ function listProducts(){
     div.classList.add("col-md-4", "col-lg-3", "col-12");
     card.classList.add("card", "mb-3");
     cardbody.classList.add("card-body");
+    img.classList.add("img");
+
+    addtocart.onclick = () => {
+        addToCart(product.serialnumber);
+    }; 
 
     //lägg till innehåll
     img.src = `${product.bouqetimg}`;
@@ -51,18 +58,17 @@ function listProducts(){
     cardbody.append(img, productname, info, price, addtocart);
     card.append(cardbody);
     div.append(card);
-    pList.append(div);
+    productlist.append(div);
     }
 }
 
-listProducts();
-// fetch(getjson)
-// .then ((response) => response.json())
-// .then((data) => {
-//     console.log(data)
-//     for (let i = 0; i < data.length; i++) {
+function addToCart(serialnumber){
+
+    item = productjson.any((product) => product.serialnumber === serialnumber)
+    shoppingcart.push(item)
+
+    for (const item of shoppingcart) {
     
-//       products.push(new Product(data.serialnumber, data.bouqet, data.info, data.price, data.bouqetimg));
-//     }
-//     listProducts();
-// })
+    console.log(item.bouqet)
+}
+};
