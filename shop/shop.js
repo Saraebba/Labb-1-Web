@@ -62,8 +62,6 @@ function listProducts(){
 
     console.log(product)
     }
-
-
 }
 
 function addToCart(serialnumber){
@@ -71,6 +69,4 @@ function addToCart(serialnumber){
     const item = products.find((p) => p.serialnumber === serialnumber)
 
     shoppingcart.push(item)
-
-    console.log(shoppingcart)
 };

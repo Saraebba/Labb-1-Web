@@ -2,6 +2,10 @@ import {shoppingcart} from "../shop/shop.js";
 
 const carttlist = document.querySelector("#cartlist");
 
+for (const item of shoppingcart) {
+
+    console.log(item)
+}
 
 listCart();
 
