@@ -5,8 +5,6 @@ const carttlist = document.querySelector("#cartlist");
 
 listCart();
 
-console.log(shoppingcart.bouqet)
-
 function listCart(){
     for (const items of shoppingcart) {
         const productimg = document.createElement("div");

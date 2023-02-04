@@ -59,16 +59,18 @@ function listProducts(){
     card.append(cardbody);
     div.append(card);
     productlist.append(div);
+
+    console.log(product)
     }
+
+
 }
 
 function addToCart(serialnumber){
 
-    item = productjson.any((product) => product.serialnumber === serialnumber)
+    const item = products.find((p) => p.serialnumber === serialnumber)
+
     shoppingcart.push(item)
 
-    for (const item of shoppingcart) {
-    
-    console.log(item.bouqet)
-}
+    console.log(shoppingcart)
 };
