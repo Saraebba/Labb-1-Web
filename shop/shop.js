@@ -1,9 +1,22 @@
 import productjson from '/products.json' assert {type:'json'};
 
 const products = [];
+let cart = [];
+let count = 0;
+let carttotal = 0;
 const productlist = document.querySelector("#productlist");
 
-export const shoppingcart = [];
+if (localStorage.getItem("count")) {
+    count = parseInt(localStorage.getItem("count"));
+}
+
+if (localStorage.getItem("sum")) {
+    carttotal = parseInt(localStorage.getItem("sum"));
+}
+
+if (localStorage.getItem("cart")) {
+    cart = JSON.parse(localStorage.getItem("cart"));
+}
 
 class Product{
     constructor(serialnumber, bouqet, info, price, bouqetimg){
@@ -23,7 +36,6 @@ for(const product of productjson){
 listProducts();
 
 function listProducts(){
-
 
     for (const product of products) {
 
@@ -59,14 +71,24 @@ function listProducts(){
     card.append(cardbody);
     div.append(card);
     productlist.append(div);
-
-    console.log(product)
     }
 }
 
+
 function addToCart(serialnumber){
-
     const item = products.find((p) => p.serialnumber === serialnumber)
+    cart.push(item)
+    for (const i of cart) {
 
-    shoppingcart.push(item)
+        console.log(i)
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+
+    updateCart()
 };
+
+function updateCart() {
+document.getElementById("count").textContent = count;
+localStorage.setItem("count", count);
+}

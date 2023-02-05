@@ -47,12 +47,63 @@
           <a class="nav-item nav-link" href="/shop/shop.html">Shop</a>
           <a class="nav-item nav-link" href="/aboutus/aboutus.html">About Us</a>
           <a class="nav-item nav-link text-right" href="#">
-            <i class="fa-solid fa-cart-shopping"></i
-          ></a>
+            <i class="fa-solid fa-cart-shopping"
+              ><span class="mx-1" id="count" style="font-size: small"
+                >0</span
+              ></i
+            ></a
+          >
         </div>
       </nav>
     </header>
-    <main></main>
+    <main>
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-body p-0">
+                <div class="row g-0">
+                  <div class="col-lg-8">
+                    <div class="p-5">
+                      <div
+                        class="d-flex justify-content-between align-items-center mb-5"
+                      >
+                        <h1 class="fw-bold mb-0 text-black">Shopping Cart</h1>
+                        <h6 class="mb-0 text-muted" id="count">0</h6>
+                      </div>
+                      <hr class="my-4" />
+                      <div
+                        class="row mb-4 mb-4 d-flex justify-content-between align-items-center"
+                        id="cartlist"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="col-lg-4 bg-grey">
+                    <div class="p-5">
+                      <h3 class="fw-bold mb-5 mt-2 pt-1">Summary</h3>
+                      <hr class="my-4" />
+
+                      <div class="d-flex justify-content-between mb-5">
+                        <h5 class="text-uppercase">Total price</h5>
+                        <h5>€ 137.00</h5>
+                      </div>
+
+                      <button
+                        type="button"
+                        class="btn btn-dark btn-block btn-lg"
+                        data-mdb-ripple-color="dark"
+                      >
+                        checkout
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
     <footer>
       <!-- place footer here -->
     </footer>
