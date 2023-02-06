@@ -37,11 +37,11 @@ function listCart(){
         productimg.classList.add("col-2")
         img.classList.add("img-fluid", "rounded-3")
         productinfo.classList.add("col-4")
-        removebtn.classList.add("btn", "btn-danger")
-        quantity.classList.add("tab", "col-2")
-        qty.classList.add("col-12")
-        btndown.classList.add("btn", "btn-secondary", "col-6");
-        btnup.classList.add("btn", "btn-secondary", "col-6");
+        removebtn.classList.add("btn", "btn-danger", "mx-3")
+        quantity.classList.add("tab", "col-4")
+        qty.classList.add("qty")
+        btndown.classList.add("btn", "btn-secondary");
+        btnup.classList.add("btn", "btn-secondary");
         minus.classList.add("fas","fa-minus")
         plus.classList.add("fas", "fa-plus")
         trash.classList.add("fa-solid", "fa-trash-can")
@@ -69,9 +69,9 @@ function listCart(){
         pricediv.append(price);
         btndown.append(minus);
         btnup.append(plus)
-        quantity.append(qty, btndown, btnup);
+        quantity.append(qty, btndown, btnup, removebtn);
         removebtn.append(trash)
-        productinfo.append(productname, removebtn);
+        productinfo.append(productname);
         productimg.append(img);
         carttlist.append(productimg, productinfo, quantity, pricediv, border);
     }
