@@ -1,16 +1,16 @@
-const carttlist = document.querySelector("#cartlist");
+const carttlist = document.querySelector('#cartlist');
+const carttotal = document.querySelector('#carttotal');
+const count = document.querySelector('#count');
 let cart = [];
+let product = {};
 
 if (localStorage.getItem("cart")) {
     cart = JSON.parse(localStorage.getItem("cart"));
 }
 
-for (const item of cart) {
-
-    console.log(item)
-}
-
 listCart();
+cartTotal();
+countitems();
 
 function listCart(){
 
@@ -22,10 +22,11 @@ function listCart(){
         const productinfo = document.createElement("div");
         const productname = document.createElement("h6");
         const removebtn = document.createElement("button");
+        const trash = document.createElement("i");
         const quantity = document.createElement("div");
+        let   qty = document.createElement("h6")
         const btndown = document.createElement("button");
         const minus = document.createElement("i");
-        const input = document.createElement("input");
         const btnup = document.createElement("button");
         const plus = document.createElement("i");
         const pricediv = document.createElement("div");
@@ -36,46 +37,46 @@ function listCart(){
         productimg.classList.add("col-2")
         img.classList.add("img-fluid", "rounded-3")
         productinfo.classList.add("col-4")
+        removebtn.classList.add("btn", "btn-danger")
         quantity.classList.add("tab", "col-2")
+        qty.classList.add("col-12")
+        btndown.classList.add("btn", "btn-secondary", "col-6");
+        btnup.classList.add("btn", "btn-secondary", "col-6");
         minus.classList.add("fas","fa-minus")
         plus.classList.add("fas", "fa-plus")
+        trash.classList.add("fa-solid", "fa-trash-can")
 
         //lägg till innehåll
         img.src = `${items.bouqetimg}`;
         productname.innerText = `${items.bouqet}`;
         price.innerText = `${items.price} $`;
-        removebtn.innerText = "Delete item"
+        qty.innerText = `${items.qty}`;
         
         removebtn.onclick = () => {
         removeFromCart(items.serialnumber);
         }; 
+
         btndown.onclick = () =>{
-            removeQuantity()
+            removeQuantity(items.serialnumber)
         };
 
-        btnup.onclick = () =>{
-        addQuantity()
+        btnup.onclick = () => {
+            addQuantity(items.serialnumber)
         };
-
-        input.oninput = () => {
-            if(input < quantity){
-                removeQuantity()
-            }else{
-                addQuantity()
-            }
-        }
 
 
         //lägg till 
         pricediv.append(price);
         btndown.append(minus);
         btnup.append(plus)
-        quantity.append(btndown, input, btnup);
+        quantity.append(qty, btndown, btnup);
+        removebtn.append(trash)
         productinfo.append(productname, removebtn);
         productimg.append(img);
         carttlist.append(productimg, productinfo, quantity, pricediv, border);
     }
 }
+
 
 function removeFromCart(serialnumber){
 
@@ -87,19 +88,45 @@ function removeFromCart(serialnumber){
 
     localStorage.setItem("cart", JSON.stringify(cart));
 
-    updatecart();
+    updateCart();
 };
 
+function cartTotal(){
+    let total = 0;
+    cart.forEach((product) => {
+    total += parseInt(product.price) * parseInt(product.qty)
+    });
+    carttotal.innerText = `$ ${total}`;
+}
 
-function updatecart(){
+function countitems(){
+    let countitems = 0;
+    cart.forEach((product) => {
+    countitems += parseInt(product.qty);
+    });
+    count.innerText = `items ${countitems}`;
+}
+
+function updateCart(){
     listCart();
+    cartTotal();
+    countitems();
     localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-function addQuantity(){
+function addQuantity(serialnumber){
+    let item = cart.find((c) => c.serialnumber === serialnumber)
 
+    item.qty++;
+     updateCart();
 }
 
-function removeQuantity(){
+function removeQuantity(serialnumber){
 
+    const item = cart.find((c) => c.serialnumber === serialnumber);
+    if (item.qty === 0){
+        removeFromCart(item.serialnumber);
+    }
+    item.qty--;
+    updateCart();
 }

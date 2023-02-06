@@ -2,17 +2,7 @@ import productjson from '/products.json' assert {type:'json'};
 
 const products = [];
 let cart = [];
-let count = 0;
-let carttotal = 0;
 const productlist = document.querySelector("#productlist");
-
-if (localStorage.getItem("count")) {
-    count = parseInt(localStorage.getItem("count"));
-}
-
-if (localStorage.getItem("sum")) {
-    carttotal = parseInt(localStorage.getItem("sum"));
-}
 
 if (localStorage.getItem("cart")) {
     cart = JSON.parse(localStorage.getItem("cart"));
@@ -76,19 +66,21 @@ function listProducts(){
 
 
 function addToCart(serialnumber){
-    const item = products.find((p) => p.serialnumber === serialnumber)
-    cart.push(item)
-    for (const i of cart) {
-
-        console.log(i)
+    if(cart.find((item) => item.serialnumber === serialnumber)){
+        item.qty += 1; 
+        }else{
+        let item = products.find((p) => p.serialnumber === serialnumber)
+        item = {
+        serialnumber : `${item.serialnumber}`,
+        bouqet: `${item.bouqet}`,
+        info: `${item.info}`,
+        price: `${item.price}`,
+        bouqetimg : `${item.bouqetimg}`,
+        qty: 1
+    }
+        cart.push(item);
     }
 
     localStorage.setItem("cart", JSON.stringify(cart));
-
-    updateCart()
 };
 
-function updateCart() {
-document.getElementById("count").textContent = count;
-localStorage.setItem("count", count);
-}
