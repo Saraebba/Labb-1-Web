@@ -66,10 +66,13 @@ function listProducts(){
 
 
 function addToCart(serialnumber){
-    if(cart.find((item) => item.serialnumber === serialnumber)){
-        item.qty += 1; 
-        }else{
-        let item = products.find((p) => p.serialnumber === serialnumber)
+    let item = products.find((p) => p.serialnumber === serialnumber)
+    const existingItem = cart.find((item) => {
+    return item.id === item.id;});
+
+    if(existingItem){
+        existingItem.qty++;
+    }else{
         item = {
         serialnumber : `${item.serialnumber}`,
         bouqet: `${item.bouqet}`,
@@ -78,9 +81,8 @@ function addToCart(serialnumber){
         bouqetimg : `${item.bouqetimg}`,
         qty: 1
     }
-        cart.push(item);
+    cart.push(item)
     }
-
     localStorage.setItem("cart", JSON.stringify(cart));
 };
 

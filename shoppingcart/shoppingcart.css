@@ -1,7 +1,14 @@
+body{
+background-color: rgb(226, 168, 177);
+}
 .img {
     width: 100%;
 }
 
 .qty {
     text-align-last: auto;
+}
+.bg-img {
+    background-image: url("../images/headerpng.png");
+    background-size: cover;
 }

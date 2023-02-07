@@ -1,7 +1,25 @@
+body {
+    background-color:rgb(226, 168, 177);
+}
 
 #map {
     height: 400px;
     /* The height is 400 pixels */
     width: 100%;
     /* The width is the width of the web page */
+}
+
+.bg-img {
+    background-image: url("../images/headerpng.png");
+    background-size: cover;
+}
+
+.text{
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.mapouter{
+    margin-right: 3rem;
+    align-content: center;
 }
