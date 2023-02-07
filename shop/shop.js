@@ -66,22 +66,25 @@ function listProducts(){
 
 
 function addToCart(serialnumber){
-    let item = products.find((p) => p.serialnumber === serialnumber)
-    const existingItem = cart.find((item) => {
-    return item.id === item.id;});
 
-    if(existingItem){
-        existingItem.qty++;
-    }else{
-        item = {
-        serialnumber : `${item.serialnumber}`,
-        bouqet: `${item.bouqet}`,
-        info: `${item.info}`,
-        price: `${item.price}`,
-        bouqetimg : `${item.bouqetimg}`,
+    let product = products.find((p) => p.serialnumber === serialnumber)
+        product = {
+        serialnumber : `${ product.serialnumber}`,
+        bouqet: `${ product.bouqet}`,
+        info: `${ product.info}`,
+        price: `${ product.price}`,
+        bouqetimg : `${ product.bouqetimg}`,
         qty: 1
-    }
-    cart.push(item)
+        }
+    const existingItem = cart.find((item) => {
+        if(item.serialnumber === product.serialnumber){
+          item.qty++;
+        return true
+        }
+        return false
+    })
+    if(!existingItem){
+    cart.push(product)
     }
     localStorage.setItem("cart", JSON.stringify(cart));
 };
