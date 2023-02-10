@@ -17,4 +17,5 @@ font-size: large;
 .img{
     margin-top: 2rem;
     border-radius: 9px;
+    max-width: 100%;
 }
