@@ -1,6 +1,8 @@
 const carttlist = document.querySelector('#cartlist');
 const carttotal = document.querySelector('#carttotal');
 const count = document.querySelector('#count');
+const checkoutbtn = document.getElementById("checkout")
+checkoutbtn.addEventListener('click', () => {clearCart();});
 let cart = [];
 let product = {};
 
@@ -11,6 +13,7 @@ if (localStorage.getItem("cart")) {
 listCart();
 cartTotal();
 countitems();
+
 
 function listCart(){
 
@@ -29,6 +32,9 @@ function listCart(){
         const minus = document.createElement("i");
         const btnup = document.createElement("button");
         const plus = document.createElement("i");
+        const itemtot = document.createElement("div")
+        const itemtotaltext = document.createElement("h6")
+        const itemtotal = document.createElement("h6")
         const pricediv = document.createElement("div");
         const price = document.createElement("h6");
         const border = document.createElement("hr");
@@ -36,21 +42,26 @@ function listCart(){
         //styla 
         productimg.classList.add("col-2")
         img.classList.add("img-fluid", "rounded-3")
-        productinfo.classList.add("col-4")
-        removebtn.classList.add("btn", "btn-danger", "mx-3")
-        quantity.classList.add("tab", "col-4")
+        pricediv.classList.add("col-1")
+        productinfo.classList.add("col-2")
+        removebtn.classList.add("btn", "btn-sm", "btn-danger", "col-1")
+        quantity.classList.add("tab", "col-3")
         qty.classList.add("qty")
-        btndown.classList.add("btn", "btn-secondary");
-        btnup.classList.add("btn", "btn-secondary");
+        btndown.classList.add("btn", "btn-sm", "btn-secondary");
+        btnup.classList.add("btn", "btn-sm", "btn-secondary");
         minus.classList.add("fas","fa-minus")
         plus.classList.add("fas", "fa-plus")
         trash.classList.add("fa-solid", "fa-trash-can")
+        itemtot.classList.add("col-3")
 
         //lägg till innehåll
         img.src = `${items.bouqetimg}`;
         productname.innerText = `${items.bouqet}`;
         price.innerText = `${items.price} $`;
         qty.innerText = `${items.qty}`;
+        itemtotal.innerText = `${items.price}` * `${items.qty}`
+        itemtotaltext.innerText = "total: $"
+ 
         
         removebtn.onclick = () => {
         removeFromCart(items.serialnumber);
@@ -64,16 +75,16 @@ function listCart(){
             addQuantity(items.serialnumber)
         };
 
-
         //lägg till 
         pricediv.append(price);
         btndown.append(minus);
         btnup.append(plus)
-        quantity.append(qty, btndown, btnup, removebtn);
+        quantity.append(qty, btndown, btnup);
         removebtn.append(trash)
         productinfo.append(productname);
         productimg.append(img);
-        carttlist.append(productimg, productinfo, quantity, pricediv, border);
+        itemtot.append(itemtotaltext ,itemtotal)
+        carttlist.append(productimg, pricediv, productinfo, quantity, itemtot, removebtn, border);
     }
 }
 
@@ -98,6 +109,7 @@ function cartTotal(){
     });
     carttotal.innerText = `$ ${total}`;
 }
+
 
 function countitems(){
     let countitems = 0;
@@ -129,4 +141,10 @@ function removeQuantity(serialnumber){
     }
     item.qty--;
     updateCart();
+}
+
+function clearCart(){
+    cart = []
+    localStorage.clear()
+    updateCart()
 }

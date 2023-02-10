@@ -4,7 +4,8 @@ body {
 }
 
 .bg-img{
-    background-image: url("../images/headerpng.png");
+    background-image: url("../images/headerpng.webp");
     background-size: cover;
     min-height: 500px;
+    alt: "header-img";
 }

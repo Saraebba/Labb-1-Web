@@ -39,10 +39,12 @@ function listProducts(){
     const addtocart  = document.createElement("button");
 
     //styla 
-    div.classList.add("col-md-4", "col-lg-3", "col-12");
+    div.classList.add("col-md-4", "col-lg-3", "col-12", "d-flex", "align-items-stretch");
     card.classList.add("card", "mb-3");
     cardbody.classList.add("card-body");
     img.classList.add("img");
+    img.alt = "flower-img"
+    addtocart.classList.add("btn", "btn-secondary")
 
     addtocart.onclick = () => {
         addToCart(product.serialnumber);
@@ -67,24 +69,24 @@ function listProducts(){
 
 function addToCart(serialnumber){
 
-    let product = products.find((p) => p.serialnumber === serialnumber)
-        product = {
-        serialnumber : `${ product.serialnumber}`,
-        bouqet: `${ product.bouqet}`,
-        info: `${ product.info}`,
-        price: `${ product.price}`,
-        bouqetimg : `${ product.bouqetimg}`,
+    let item = products.find((p) => p.serialnumber === serialnumber)
+       item = {
+        serialnumber : `${ item.serialnumber}`,
+        bouqet: `${ item.bouqet}`,
+        info: `${ item.info}`,
+        price: `${ item.price}`,
+        bouqetimg : `${ item.bouqetimg}`,
         qty: 1
         }
-    const existingItem = cart.find((item) => {
-        if(item.serialnumber === product.serialnumber){
-          item.qty++;
+    const existingItem = cart.find((i) => {
+        if(i.serialnumber === item.serialnumber){
+          i.qty++;
         return true
         }
         return false
     })
     if(!existingItem){
-    cart.push(product)
+    cart.push(item)
     }
     localStorage.setItem("cart", JSON.stringify(cart));
 };

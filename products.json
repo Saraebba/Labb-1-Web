@@ -4,27 +4,27 @@
         "bouqet": "Brudbukett",
         "info": "beskrivning av bukett",
         "price": "10",
-        "bouqetimg": "../images/brudbukett-1.png"
+        "bouqetimg": "../images/brudbukett-1.webp"
     },
     {
         "serialnumber": 2,
         "bouqet": "Brudbukett",
         "info": "beskrivning av bukett",
         "price": "5",
-        "bouqetimg": "../images/brudbukett-2.png"
+        "bouqetimg": "../images/brudbukett-2.webp"
     },
     {
         "serialnumber": 3,
         "bouqet": "Brudbukett",
         "info": "beskrivning av bukett",
         "price": "15",
-        "bouqetimg": "../images/brudbukett-3.png"
+        "bouqetimg": "../images/brudbukett-3.webp"
     },
     {
         "serialnumber": 11,
         "bouqet": "Klassisk",
         "info": "beskrivning av bukett",
         "price": "11",
-        "bouqetimg": "../images/klassisk-1.png"
+        "bouqetimg": "../images/klassisk-1.webp"
     }
 ]
