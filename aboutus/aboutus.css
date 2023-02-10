@@ -1,5 +1,6 @@
 body {
-    background-color:rgb(226, 168, 177);
+    background-color: #BE95C4;
+    font-family: "avantgarde", sans-serif;
 }
 
 #map {
@@ -9,17 +10,26 @@ body {
     /* The width is the width of the web page */
 }
 
-.bg-img {
-    background-image: url("../images/headerpng.png");
-    background-size: cover;
-}
-
-.text{
-    margin-top: 1rem;
+.footer{
+    margin-top: 4rem;
     text-align: center;
 }
 
 .mapouter{
     margin-right: 3rem;
     align-content: center;
+}
+
+.nav-item {
+    color: #5E548E;
+    font-size: large;
+}
+
+.navbar {
+    background-color: #231942;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.main{
+    margin-top: 3rem;
 }

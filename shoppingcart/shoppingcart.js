@@ -33,7 +33,6 @@ function listCart(){
         const btnup = document.createElement("button");
         const plus = document.createElement("i");
         const itemtot = document.createElement("div")
-        const itemtotaltext = document.createElement("h6")
         const itemtotal = document.createElement("h6")
         const pricediv = document.createElement("div");
         const price = document.createElement("h6");
@@ -41,26 +40,25 @@ function listCart(){
 
         //styla 
         productimg.classList.add("col-2")
-        img.classList.add("img-fluid", "rounded-3")
+        img.classList.add("img", "rounded-3")
         pricediv.classList.add("col-1")
         productinfo.classList.add("col-2")
         removebtn.classList.add("btn", "btn-sm", "btn-danger", "col-1")
-        quantity.classList.add("tab", "col-3")
-        qty.classList.add("qty")
-        btndown.classList.add("btn", "btn-sm", "btn-secondary");
-        btnup.classList.add("btn", "btn-sm", "btn-secondary");
+        quantity.classList.add("qty", "col-3")
+        btndown.classList.add("btn", "qtybtn", "btn-sm", "btn-secondary");
+        btnup.classList.add("btn", "qtybtn", "btn-sm", "btn-secondary");
         minus.classList.add("fas","fa-minus")
         plus.classList.add("fas", "fa-plus")
         trash.classList.add("fa-solid", "fa-trash-can")
         itemtot.classList.add("col-3")
+        border.classList.add("border")
 
         //lägg till innehåll
         img.src = `${items.bouqetimg}`;
         productname.innerText = `${items.bouqet}`;
         price.innerText = `${items.price} $`;
         qty.innerText = `${items.qty}`;
-        itemtotal.innerText = `${items.price}` * `${items.qty}`
-        itemtotaltext.innerText = "total: $"
+        itemtotal.innerText = "Total: " + (`${items.price}` * `${items.qty}`) + " $";
  
         
         removebtn.onclick = () => {
@@ -79,11 +77,11 @@ function listCart(){
         pricediv.append(price);
         btndown.append(minus);
         btnup.append(plus)
-        quantity.append(qty, btndown, btnup);
+        quantity.append(btndown, qty,  btnup);
         removebtn.append(trash)
         productinfo.append(productname);
         productimg.append(img);
-        itemtot.append(itemtotaltext ,itemtotal)
+        itemtot.append(itemtotal);
         carttlist.append(productimg, pricediv, productinfo, quantity, itemtot, removebtn, border);
     }
 }

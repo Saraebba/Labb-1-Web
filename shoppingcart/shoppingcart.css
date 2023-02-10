@@ -1,19 +1,40 @@
 body{
-background-color: rgb(226, 168, 177);
+background-color:#5E548E;
+font-family: "avantgarde", sans-serif;
 }
+
 .img {
     width: 100%;
+    height: auto;
+    border-radius: 9px;
 }
-.qty {
-    text-align-last: auto;
+
+.nav-item {
+    color: #5E548E;
+    font-size: large;
 }
-.bg-img {
-    background-image: url("../images/headerpng.png");
-    background-size: cover;
-    alt: "header-img";
+
+.navbar {
+    background-color: #231942;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
 .fas:hover{
-
-    color: rgb(226, 168, 177);
+    color:#100e18;
 }
+
+.border{
+    margin-top: 1rem;
+}
+
+.qty{
+    display: flex;
+    align-items: center;
+}
+.qtybtn{
+    margin-left: 8px;
+    margin-right: 8px;
+    background-color: #231942;
+    border: 0;
+}
+

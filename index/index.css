@@ -1,11 +1,20 @@
 body {
-    font-family: "Lato", sans-serif;
-    background-color: rgb(226, 168, 177);
+    font-family: "avantgarde", sans-serif;
+    background-color: #BE95C4;
+    text-align: center;
 }
 
-.bg-img{
-    background-image: url("../images/headerpng.webp");
-    background-size: cover;
-    min-height: 500px;
-    alt: "header-img";
+.nav-item{
+color: #5E548E;
+font-size: large;
+}
+
+.navbar{
+    background-color: #231942;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.img{
+    margin-top: 2rem;
+    border-radius: 9px;
 }

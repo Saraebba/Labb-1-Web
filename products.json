@@ -1,30 +1,30 @@
 [
     {
         "serialnumber": 1,
-        "bouqet": "Brudbukett",
-        "info": "beskrivning av bukett",
-        "price": "10",
-        "bouqetimg": "../images/brudbukett-1.webp"
+        "bouqet": "Bouquet of roses",
+        "info": "Description of bouquet",
+        "price": "12",
+        "bouqetimg": "../images/roses.webp"
     },
     {
         "serialnumber": 2,
-        "bouqet": "Brudbukett",
-        "info": "beskrivning av bukett",
-        "price": "5",
+        "bouqet": "Bridal bouquet",
+        "info": "Description of bouquet",
+        "price": "85",
         "bouqetimg": "../images/brudbukett-2.webp"
     },
     {
-        "serialnumber": 3,
-        "bouqet": "Brudbukett",
-        "info": "beskrivning av bukett",
-        "price": "15",
-        "bouqetimg": "../images/brudbukett-3.webp"
+        "serialnumber": 123,
+        "bouqet": "Funeral bouquet",
+        "info": "Description of bouquet",
+        "price": "60",
+        "bouqetimg": "../images/funeral.webp"
     },
     {
-        "serialnumber": 11,
-        "bouqet": "Klassisk",
-        "info": "beskrivning av bukett",
-        "price": "11",
-        "bouqetimg": "../images/klassisk-1.webp"
+        "serialnumber": 12,
+        "bouqet": "Classic",
+        "info": "Description of bouquet",
+        "price": "15",
+        "bouqetimg": "../images/klassisk-3.webp"
     }
 ]
