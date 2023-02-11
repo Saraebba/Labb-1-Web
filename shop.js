@@ -3,12 +3,29 @@ import productjson from './products.json' assert {type:'json'};
 const products = [];
 let cart = [];
 const productlist = document.querySelector("#productlist");
+<<<<<<< HEAD
+=======
+const modaltoggle = document.querySelector("#modal");
+>>>>>>> 7336d73abf31fd365c263d9351a3603ed520d10e
 
 
 if (localStorage.getItem("cart")) {
     cart = JSON.parse(localStorage.getItem("cart"));
 }
 
+<<<<<<< HEAD
+=======
+const openEls = document.querySelectorAll("[data-open]");
+const isVisible = "is-visible";
+
+for(const el of openEls) {
+  el.addEventListener("click", function() {
+    const modalId = this.dataset.open;
+    document.getElementById('modal').classList.add(isVisible);
+  });
+}
+
+>>>>>>> 7336d73abf31fd365c263d9351a3603ed520d10e
 class Product{
     constructor(serialnumber, bouqet, info, price, bouqetimg){
         this.serialnumber = serialnumber;
@@ -55,11 +72,25 @@ function listProducts(){
     //lägg till innehåll
     img.src = `${product.bouqetimg}`;
     productname.innerText = `${product.bouqet}`;
+<<<<<<< HEAD
+=======
+    // modallink.innerText = "läs mer..."
+>>>>>>> 7336d73abf31fd365c263d9351a3603ed520d10e
     info.innerText = `${product.info}`;
     price.innerText = `${product.price} $`;
     addtocart.innerText ="Add to cart";
 
 
+<<<<<<< HEAD
+=======
+    //lägg till 
+    // modalheader.append(productname)
+    // modalbody.append(info)
+    // modalfooter.append(price, addtocart)
+    // modalcontent.append(modalheader, modalbody, modalfooter)
+    // modaldialog.append(modalcontent)
+    // modalfade.append(modaldialog)
+>>>>>>> 7336d73abf31fd365c263d9351a3603ed520d10e
     cardbody.append(img, productname, info, price, addtocart);
     card.append(cardbody);
     div.append(card);
@@ -91,4 +122,9 @@ function addToCart(serialnumber){
     cart.push(item)
     }
     localStorage.setItem("cart", JSON.stringify(cart));
+<<<<<<< HEAD
 };
+=======
+};
+
+>>>>>>> 7336d73abf31fd365c263d9351a3603ed520d10e
