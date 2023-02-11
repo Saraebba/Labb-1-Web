@@ -24,13 +24,13 @@ function listCart(){
         const img = document.createElement("img");
         const productinfo = document.createElement("div");
         const productname = document.createElement("h6");
-        const removebtn = document.createElement("button");
+        const removebutton = document.createElement("button");
         const trash = document.createElement("i");
         const quantity = document.createElement("div");
         let   qty = document.createElement("h6")
-        const btndown = document.createElement("button");
+        const buttondown = document.createElement("button");
         const minus = document.createElement("i");
-        const btnup = document.createElement("button");
+        const buttonup = document.createElement("button");
         const plus = document.createElement("i");
         const itemtot = document.createElement("div")
         const itemtotal = document.createElement("h6")
@@ -43,10 +43,10 @@ function listCart(){
         img.classList.add("img", "rounded-3")
         pricediv.classList.add("col-1")
         productinfo.classList.add("col-2")
-        removebtn.classList.add("btn", "btn-sm", "btn-danger", "col-1")
+        removebutton.classList.add("btn", "btn-sm", "btn-danger", "col-1")
         quantity.classList.add("qty", "col-3")
-        btndown.classList.add("btn", "qtybtn", "btn-sm", "btn-secondary");
-        btnup.classList.add("btn", "qtybtn", "btn-sm", "btn-secondary");
+        buttondown.classList.add("btn", "qtybtn", "btn-sm", "btn-secondary");
+        buttonup.classList.add("btn", "qtybtn", "btn-sm", "btn-secondary");
         minus.classList.add("fas","fa-minus")
         plus.classList.add("fas", "fa-plus")
         trash.classList.add("fa-solid", "fa-trash-can")
@@ -61,24 +61,24 @@ function listCart(){
         itemtotal.innerText = "Total: " + (`${items.price}` * `${items.qty}`) + " $";
  
         
-        removebtn.onclick = () => {
+        removebutton.onclick = () => {
         removeFromCart(items.serialnumber);
         }; 
 
-        btndown.onclick = () =>{
+        buttondown.onclick = () =>{
             removeQuantity(items.serialnumber)
         };
 
-        btnup.onclick = () => {
+        buttonup.onclick = () => {
             addQuantity(items.serialnumber)
         };
 
         //lägg till 
         pricediv.append(price);
-        btndown.append(minus);
-        btnup.append(plus)
+        buttondown.append(minus);
+        buttonup.append(plus)
         quantity.append(btndown, qty,  btnup);
-        removebtn.append(trash)
+        removebutton.append(trash)
         productinfo.append(productname);
         productimg.append(img);
         itemtot.append(itemtotal);
