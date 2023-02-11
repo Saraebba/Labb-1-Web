@@ -1,4 +1,4 @@
-import productjson from '../products.json' assert {type:'json'};
+import productjson from './products.json' assert {type:'json'};
 
 const products = [];
 let cart = [];
