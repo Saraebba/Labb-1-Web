@@ -4,27 +4,27 @@
         "bouqet": "Bouquet of roses",
         "info": "Description of bouquet",
         "price": "12",
-        "bouqetimg": "../images/roses.webp"
+        "bouqetimg": "./images/roses.webp"
     },
     {
         "serialnumber": 2,
         "bouqet": "Bridal bouquet",
         "info": "Description of bouquet",
         "price": "85",
-        "bouqetimg": "../images/bridal.webp"
+        "bouqetimg": "./images/bridal.webp"
     },
     {
         "serialnumber": 123,
         "bouqet": "Funeral bouquet",
         "info": "Description of bouquet",
         "price": "60",
-        "bouqetimg": "../images/funeral.webp"
+        "bouqetimg": "./images/funeral.webp"
     },
     {
         "serialnumber": 12,
         "bouqet": "Classic",
         "info": "Description of bouquet",
         "price": "15",
-        "bouqetimg": "../images/classic.webp"
+        "bouqetimg": "./images/classic.webp"
     }
 ]
