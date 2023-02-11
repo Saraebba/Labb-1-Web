@@ -4,7 +4,7 @@
         "bouqet": "Bouquet of roses",
         "info": "Description of bouquet",
         "price": "12",
-        "bouqetimg": "/images/roses.webp"
+        "bouqetimg": "./images/roses.webp"
     },
     {
         "serialnumber": 2,
@@ -18,7 +18,7 @@
         "bouqet": "Funeral bouquet",
         "info": "Description of bouquet",
         "price": "60",
-        "bouqetimg": "../images/funeral.webp"
+        "bouqetimg": "./images/funeral.webp"
     },
     {
         "serialnumber": 12,
