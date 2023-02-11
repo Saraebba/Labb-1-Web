@@ -79,8 +79,8 @@ function listCart(){
         pricediv.append(price);
         buttondown.append(minus);
         buttonup.append(plus)
-        quantity.append(btndown, qty,  btnup);
-        removebuttonn.append(trash)
+        quantity.append(buttondown, qty,  buttonup);
+        removebutton.append(trash)
         productinfo.append(productname);
         productimg.append(img);
         itemtot.append(itemtotal);
