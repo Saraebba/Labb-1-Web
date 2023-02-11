@@ -52,6 +52,8 @@ function listCart(){
         trash.classList.add("fa-solid", "fa-trash-can")
         itemtot.classList.add("col-3")
         border.classList.add("border")
+        img.alt = "flower-img"
+
 
         //lägg till innehåll
         img.src = `${items.bouqetimg}`;
@@ -75,14 +77,14 @@ function listCart(){
 
         //lägg till 
         pricediv.append(price);
-        buttondown.append(minus);
-        buttonup.append(plus)
+        btndown.append(minus);
+        btnup.append(plus)
         quantity.append(btndown, qty,  btnup);
-        removebutton.append(trash)
+        removebtn.append(trash)
         productinfo.append(productname);
         productimg.append(img);
         itemtot.append(itemtotal);
-        carttlist.append(productimg, pricediv, productinfo, quantity, itemtot, removebtn, border);
+        carttlist.append(productimg, pricediv, productinfo, quantity, itemtot, removebutton, border);
     }
 }
 
