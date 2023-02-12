@@ -7,9 +7,9 @@ body {
 
 .img {
     width: 150px;
-    height: 150px;
+    height: 100px;
     max-width: 100%;
-    height: auto;
+    max-height: 100%;
     border-radius: 9px;
 }
 
