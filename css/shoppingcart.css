@@ -3,7 +3,11 @@ body {
     font-family: "avantgarde", sans-serif;
 }
 
+
+
 .img {
+    max-width: 150px;
+    max-height: 150px;
     width: 100%;
     height: auto;
     border-radius: 9px;
@@ -37,4 +41,10 @@ body {
     margin-right: 8px;
     background-color: #231942;
     border: 0;
+}
+
+#cartlist{
+    display: flex;
+    width: 100%;
+    height: 100%;
 }

@@ -33,7 +33,7 @@ function listProducts(){
     const div = document.createElement("div");
     const card = document.createElement("div");
     const cardbody = document.createElement("div");
-    const img = document.createElement("img");
+    const img = document.createElement("img", "card-img-top");
     const productname = document.createElement("h3");
     const info = document.createElement("p");
     const price = document.createElement("h5");
@@ -60,8 +60,8 @@ function listProducts(){
     addtocart.innerText ="Add to cart";
 
 
-    cardbody.append(img, productname, info, price, addtocart);
-    card.append(cardbody);
+    cardbody.append(productname, info, price, addtocart);
+    card.append(img, cardbody);
     div.append(card);
     productlist.append(div);
     }
